@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1554770275 source:d:\nueva carpeta\tomas zorzano\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
+1554765164 d:\nueva carpeta\tomas zorzano\arrayemployees.h
+
+1554770374 source:d:\nueva carpeta\tomas zorzano\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
+1554762866 source:d:\nueva carpeta\tomas zorzano\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1554762866 d:\nueva carpeta\tomas zorzano\funciones.h
+
