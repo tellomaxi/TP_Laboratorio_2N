@@ -25,3 +25,29 @@
 
 1554762866 d:\nueva carpeta\tomas zorzano\funciones.h
 
+1555002955 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
+1555003039 c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.h
+
+1554757482 c:\users\tomas\desktop\tp_laboratorio_2n-master\funciones.h
+
+1554757482 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1555001650 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
