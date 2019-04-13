@@ -156,13 +156,13 @@ int addEmployee(eEmployee list[], int len)
                     printf("ERROR- EL SALARIO TIENE QUE CONTENER SOLO NUMEROS \n\n");
                     system("pause");
                     system("cls");
-                    printf("\nNombre: %s - Apellido: %s \n\n",auxName,auxLastName);
+                    printf("\nNombre: %s - Apellido: %s \n",auxName,auxLastName);
                     salario=1;
                 };
                 salario=1;
 
             }
-            printf("\nNombre: %s - Apellido: %s - Salario: %s \n\n",auxName,auxLastName,auxSalary);
+            printf("\nNombre: %s - Apellido: %s - Salario: %s \n",auxName,auxLastName,auxSalary);
             if(sector == 0)
             {
                 while(!funcion_getStringNumeros("Ingrese Sector: ", auxSector))
@@ -370,7 +370,7 @@ void modifyEmployee(eEmployee list[], int len)
     }
 
 
-    while (index == 0)
+    while ((index >= 0) && (index <=1000))
     {
         viewEmployee(list[index]);
 
@@ -387,8 +387,9 @@ void modifyEmployee(eEmployee list[], int len)
                     printf("ERROR- EL NOMBRE TIENE QUE CONTENER SOLO LETRAS\n\n ");
                     system("pause");
                     system("cls");
-                     };
+                };
                 strcpy(list[index].name,newName);
+                exit = 0;
                 break;
             case 2:
                 fflush(stdin);
@@ -400,6 +401,7 @@ void modifyEmployee(eEmployee list[], int len)
                     system("cls");
                 };
                 strcpy(list[index].lastName,newLastName);
+                exit = 0;
 
                 break;
             case 3:
@@ -415,7 +417,7 @@ void modifyEmployee(eEmployee list[], int len)
                 };
 
                 list[index].salary = atof(newSalary);
-
+                exit = 0;
                 break;
             case 4:
                 fflush(stdin);
@@ -425,13 +427,13 @@ void modifyEmployee(eEmployee list[], int len)
                     printf("ERROR- EL SECTOR TIENE QUE CONTENER SOLO NUMEROS ENTEROS \n\n");
                     system("pause");
                     system("cls");
-                  };
+                };
                 list[index].sector=atoi(newSector);
-
+                exit = 0;
                 break;
             case 5:
                 printf("Volviendo a menu principal");
-                exit++;
+                exit = 0;
                 break;
             default:
                 printf("\n\nOpcion ingresada incorrecta, por favor ingrese una opcion del 1 al 5\n\n");
@@ -450,6 +452,7 @@ void modifyEmployee(eEmployee list[], int len)
 
                 fflush(stdin);
                 system("cls");
+                break;
             }
 
             else
@@ -459,15 +462,34 @@ void modifyEmployee(eEmployee list[], int len)
 
                 fflush(stdin);
                 system("cls");
+
             }
+            return;
         }
         while (seguir == 's' || seguir == 'S');
 
 
-     }
+    }
 
 
-}
+
+};
+
+void harcodeoEmpleados(eEmployee* list)
+{
+
+    eEmployee x[]={
+    {0,"Tomas", "Zorzano",23.00,2},
+    {1,"Camila", "Cacciavillani",30.00,1},
+    {2,"Cristian", "Zorzano",90.00,2},
+    {3,"Federico", "Zorzano",42.00,2},
+    {4,"Carolina", "Zorzano",8.00,2},
+    };
+    for(int i = 0; i< 5;i++)
+    {
+        list[i] = x[i];
+    }
+};
 
 
 

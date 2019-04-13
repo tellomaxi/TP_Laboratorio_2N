@@ -84,3 +84,5 @@ void modifyEmployee(eEmployee list[], int len);
 
 int funcion_opcionesModificacion();
 
+void harcodeoEmpleados(eEmployee* list);
+

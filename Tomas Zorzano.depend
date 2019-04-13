@@ -25,7 +25,7 @@
 
 1554762866 d:\nueva carpeta\tomas zorzano\funciones.h
 
-1555002955 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.c
+1555120250 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -33,7 +33,7 @@
 	"ArrayEmployees.h"
 	"Funciones.h"
 
-1555003039 c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.h
+1555120276 c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.h
 
 1554757482 c:\users\tomas\desktop\tp_laboratorio_2n-master\funciones.h
 
@@ -43,7 +43,7 @@
 	<string.h>
 	"funciones.h"
 
-1555001650 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\main.c
+1555120209 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

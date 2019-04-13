@@ -17,6 +17,8 @@ int main()
     initEmployees(employee,MAX);
     int flagSinAlta=0;
 
+    harcodeoEmpleados(employee);
+
     do
     {
 
@@ -70,7 +72,7 @@ int main()
             break;
 
         }
-        printf("\n Desea continuar usando la calculadora? \n\n");
+        printf("\n Desea continuar usando la calculadora? si/no \n\n");
         scanf("%c",&seguir);
 
         fflush(stdin);
