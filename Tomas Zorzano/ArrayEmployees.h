@@ -62,3 +62,27 @@ free space] - (0) if Ok
 int addEmployee(eEmployee list[], int len);
 
 int funcion_opciones();
+/** \brief Remove a Employee by Id (put isEmpty Flag in 1)
+ *
+ * \param list Employee*
+ * \param len int
+ * \param id int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
+find a employee] - (0) if Ok
+ */
+
+
+int removeEmployee(eEmployee* list, int len);
+/** \brief Modify a Employee by Id (put isEmpty Flag in 1)
+ *
+ * \param list Employee*
+ * \param len int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
+find a employee] - (0) if Ok
+ */
+void modifyEmployee(eEmployee list[], int len);
+
+int funcion_opcionesModificacion();
+
+void harcodeoEmpleados(eEmployee* list);
+

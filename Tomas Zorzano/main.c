@@ -17,6 +17,8 @@ int main()
     initEmployees(employee,MAX);
     int flagSinAlta=0;
 
+    harcodeoEmpleados(employee);
+
     do
     {
 
@@ -27,10 +29,38 @@ int main()
             flagSinAlta++;
             break;
         case 2:
+            if (flagSinAlta == 0)
+            {
+                printf("\nNO EXISTEN EMPLEADOS EN EL SISTEMA\n\n");
+                break;
+            }
+            else
+            {
+                modifyEmployee(employee, MAX);
+            };
             break;
         case 3:
+            if (flagSinAlta == 0)
+            {
+                printf("\nNO EXISTEN EMPLEADOS EN EL SISTEMA\n\n");
+                break;
+            }
+            else
+            {
+                removeEmployee(employee, MAX);
+            };
             break;
         case 4:
+            if (flagSinAlta == 0)
+            {
+                printf("\nNO EXISTEN EMPLEADOS EN EL SISTEMA\n\n");
+                break;
+            }
+            else
+            {
+                viewEmployees(employee, MAX);
+            };
+
             break;
         case 5:
             printf("Saliendo...");
@@ -42,10 +72,11 @@ int main()
             break;
 
         }
-        printf("\n\n Desea continuar? \n\n");
+        printf("\n Desea continuar usando la calculadora? si/no \n\n");
         scanf("%c",&seguir);
-        system("cls");
+
         fflush(stdin);
+        system("cls");
 
 
     }

@@ -60,7 +60,7 @@ int findEmployee(eEmployee list[],int len, int id)
 void viewEmployee(eEmployee aEmployee)
 {
 
-    printf(" ID:%d - Nombre:%s -  Apellido:%s-  Salario:%.2f-  Sector:%d ", aEmployee.id, aEmployee.name, aEmployee.lastName, aEmployee.salary, aEmployee.sector);
+    printf(" \nID:%d - Nombre:%s -  Apellido:%s-  Salario:%.2f-  Sector:%d \n ", aEmployee.id, aEmployee.name, aEmployee.lastName, aEmployee.salary, aEmployee.sector);
 };
 
 void viewEmployees(eEmployee list[], int len)
@@ -77,7 +77,7 @@ void viewEmployees(eEmployee list[], int len)
             viewEmployee(list[i]);
         }
     }
-    system("pause");
+
 };
 int addEmployee(eEmployee list[], int len)
 
@@ -156,13 +156,13 @@ int addEmployee(eEmployee list[], int len)
                     printf("ERROR- EL SALARIO TIENE QUE CONTENER SOLO NUMEROS \n\n");
                     system("pause");
                     system("cls");
-                    printf("\nNombre: %s - Apellido: %s \n\n",auxName,auxLastName);
+                    printf("\nNombre: %s - Apellido: %s \n",auxName,auxLastName);
                     salario=1;
                 };
                 salario=1;
 
             }
-            printf("\nNombre: %s - Apellido: %s - Salario: %s \n\n",auxName,auxLastName,auxSalary);
+            printf("\nNombre: %s - Apellido: %s - Salario: %s \n",auxName,auxLastName,auxSalary);
             if(sector == 0)
             {
                 while(!funcion_getStringNumeros("Ingrese Sector: ", auxSector))
@@ -183,6 +183,7 @@ int addEmployee(eEmployee list[], int len)
                 strcpy(newEployee.lastName,auxLastName);
                 newEployee.sector = atoi(auxSector);
                 newEployee.salary = atof(auxSalary);
+                newEployee.isEmpty=0;
                 list[index] = newEployee ;
                 system("cls");
                 printf("\n\n********NUEVO EMPLEADO, BIENVENIDO*********\n\n");
@@ -226,4 +227,272 @@ int funcion_opciones()
 
 
     return opcionIngresada;
+};
+
+int funcion_opcionesModificacion()
+{
+    int opcionIngresada;
+    char auxOpcion[5];
+
+
+    system("cls");
+    printf("\n******* MENU DE OPCIONES *******");
+    printf("\n Que desea modificar?\n");
+    printf(" 1- NOMBRE \n");
+    printf(" 2- APELLIDO \n");
+    printf(" 3- SUELDO \n");
+    printf(" 4- SECTOR \n");
+    printf(" 5- NO MODIFICAR NADA \n ");
+    while(!funcion_getStringNumeros("Ingrese una opcion del 1-5 : ",auxOpcion))
+    {
+        printf("ERROR- La opcion tiene que ser solo numeros del 1 al 5\n\n");
+
+        system("pause");
+    }
+
+    opcionIngresada=atoi(auxOpcion);
+
+
+    return opcionIngresada;
+};
+int removeEmployee(eEmployee* list, int len)
+{
+
+    int index;
+    char next[3];
+    int id;
+    char auxId[4];
+
+
+
+    system("cls");
+    printf("  *** BAJA EMPLEADO ***\n\n");
+
+    while(!funcion_getStringNumeros("Ingrese ID: ", auxId))
+    {
+        printf("ERROR- EL ID TIENE QUE TENER SOLO NUMEROS \n\n");
+        system("pause");
+        system("cls");
+    };
+
+    id=atoi(auxId);
+
+    index = findEmployee(list, len, id);
+
+    while (index == -1)
+    {
+        printf("NO HAY NINGUN EMPLEADO CON ESE ID %d\n\n", id);
+        while(!funcion_getStringNumeros("Ingrese un ID existente: ", auxId))
+        {
+            printf("ERROR- EL ID TIENE QUE TENER SOLO NUMEROS \n\n");
+            system("pause");
+            system("cls");
+        };
+        id=atoi(auxId);
+        index = findEmployee(list, len, id);
+
+    }
+
+
+
+    while (index == 0)
+    {
+        viewEmployee(list[index]);
+
+        while(!funcion_getStringLetras("\nQUIERE BORRAR USUARIO DEL SISTEMA? si/no: ",next))
+        {
+            printf("\n ERROR DEBE CONTENER SOLO LETRAS");
+        }
+
+        fflush(stdin);
+
+
+
+        if(strcmp(next,"si") && strcmp(next,"SI"))
+        {
+            printf("NO SE REALIZO LA BAJA\n\n");
+            break;
+
+
+        }
+        else if(strcmp(next,"no")&& strcmp(next,"NO"))
+        {
+
+            list[index].isEmpty = 1;
+            printf("SE HIZO LA BAJA DEL EMPLEADO CORRECTAMENTE\n\n");
+            break;
+
+
+        }
+
+    }
+    return -1;
 }
+
+void modifyEmployee(eEmployee list[], int len)
+{
+    int id;
+    char auxId[5];
+    int index;
+    char newSalary[10];
+    char newSector[3];
+    char newName[31];
+    char newLastName[31];
+    char seguir='s';
+    int exit = 1;
+
+    system("cls");
+    printf("  *** Modificar  empleado ***\n\n");
+
+    while(!funcion_getStringNumeros("Ingrese ID: ", auxId))
+    {
+        printf("ERROR- EL ID TIENE QUE TENER SOLO NUMEROS \n\n");
+        system("pause");
+        system("cls");
+    };
+
+    id=atoi(auxId);
+
+    index = findEmployee(list, len, id);
+
+    while (index == -1)
+    {
+        printf("NO HAY NINGUN EMPLEADO CON ESE ID %d\n\n", id);
+        while(!funcion_getStringNumeros("Ingrese un ID existente: ", auxId))
+        {
+            printf("ERROR- EL ID TIENE QUE TENER SOLO NUMEROS \n\n");
+            system("pause");
+            system("cls");
+        };
+        id=atoi(auxId);
+        index = findEmployee(list, len, id);
+
+    }
+
+
+    while ((index >= 0) && (index <=1000))
+    {
+        viewEmployee(list[index]);
+
+        do
+        {
+            switch (funcion_opcionesModificacion())
+            {
+            case 1:
+                fflush(stdin);
+                viewEmployee(list[index]);
+
+                while(!funcion_getStringLetras("Ingrese nombre nuevo: ", newName))
+                {
+                    printf("ERROR- EL NOMBRE TIENE QUE CONTENER SOLO LETRAS\n\n ");
+                    system("pause");
+                    system("cls");
+                };
+                strcpy(list[index].name,newName);
+                exit = 0;
+                break;
+            case 2:
+                fflush(stdin);
+                viewEmployee(list[index]);
+                while(!funcion_getStringLetras("Ingrese apellido nuevo: ",newLastName))
+                {
+                    printf("ERROR- EL APELLIDO TIENE QUE CONTENER SOLO LETRAS\n\n ");
+                    system("pause");
+                    system("cls");
+                };
+                strcpy(list[index].lastName,newLastName);
+                exit = 0;
+
+                break;
+            case 3:
+                fflush(stdin);
+                viewEmployee(list[index]);
+
+                while(!funcion_getStringNumerosFlotantes("Ingrese Salario: ", newSalary))
+                {
+                    printf("ERROR- EL SALARIO TIENE QUE CONTENER SOLO NUMEROS \n\n");
+                    system("pause");
+                    system("cls");
+
+                };
+
+                list[index].salary = atof(newSalary);
+                exit = 0;
+                break;
+            case 4:
+                fflush(stdin);
+                viewEmployee(list[index]);
+                while(!funcion_getStringNumeros("Ingrese sector nuevo: ", newSector))
+                {
+                    printf("ERROR- EL SECTOR TIENE QUE CONTENER SOLO NUMEROS ENTEROS \n\n");
+                    system("pause");
+                    system("cls");
+                };
+                list[index].sector=atoi(newSector);
+                exit = 0;
+                break;
+            case 5:
+                printf("Volviendo a menu principal");
+                exit = 0;
+                break;
+            default:
+                printf("\n\nOpcion ingresada incorrecta, por favor ingrese una opcion del 1 al 5\n\n");
+                system("pause");
+                break;
+
+
+            }
+
+            if(exit==0)
+
+            {
+                printf("\n*** MODIFICACCION EXITOSA ***");
+                printf("\n  Desea continuar modificando? \n\n");
+                scanf("%c",&seguir);
+
+                fflush(stdin);
+                system("cls");
+                break;
+            }
+
+            else
+            {
+                printf("\n\n esta por salir de modificacion esta seguro? s/n \n\n");
+                scanf("%c",&seguir);
+
+                fflush(stdin);
+                system("cls");
+
+            }
+            return;
+        }
+        while (seguir == 's' || seguir == 'S');
+
+
+    }
+
+
+
+};
+
+void harcodeoEmpleados(eEmployee* list)
+{
+
+    eEmployee x[]={
+    {0,"Tomas", "Zorzano",23.00,2},
+    {1,"Camila", "Cacciavillani",30.00,1},
+    {2,"Cristian", "Zorzano",90.00,2},
+    {3,"Federico", "Zorzano",42.00,2},
+    {4,"Carolina", "Zorzano",8.00,2},
+    };
+    for(int i = 0; i< 5;i++)
+    {
+        list[i] = x[i];
+    }
+};
+
+
+
+
+
+

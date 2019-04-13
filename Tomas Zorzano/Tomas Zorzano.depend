@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1554770275 source:d:\nueva carpeta\tomas zorzano\arrayemployees.c
+1554771524 source:d:\nueva carpeta\tomas zorzano\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -7,9 +7,9 @@
 	"ArrayEmployees.h"
 	"Funciones.h"
 
-1554765164 d:\nueva carpeta\tomas zorzano\arrayemployees.h
+1554771236 d:\nueva carpeta\tomas zorzano\arrayemployees.h
 
-1554770374 source:d:\nueva carpeta\tomas zorzano\main.c
+1554771685 source:d:\nueva carpeta\tomas zorzano\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -24,4 +24,30 @@
 	"funciones.h"
 
 1554762866 d:\nueva carpeta\tomas zorzano\funciones.h
+
+1555120250 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
+1555120276 c:\users\tomas\desktop\tp_laboratorio_2n-master\arrayemployees.h
+
+1554757482 c:\users\tomas\desktop\tp_laboratorio_2n-master\funciones.h
+
+1554757482 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1555120209 source:c:\users\tomas\desktop\tp_laboratorio_2n-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
 
