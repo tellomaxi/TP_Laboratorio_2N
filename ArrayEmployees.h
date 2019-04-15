@@ -86,3 +86,13 @@ int funcion_opcionesModificacion();
 
 void harcodeoEmpleados(eEmployee* list);
 
+/** \brief
+ *
+ * \param list Employee*
+ * \param len int
+ * \param id int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
+find a employee] - (0) if Ok
+ */
+
+int sortEmployees(sEmployee* list, int len, int order);

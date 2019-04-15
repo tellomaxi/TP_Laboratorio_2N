@@ -340,6 +340,7 @@ void modifyEmployee(eEmployee list[], int len)
     char newLastName[31];
     char seguir='s';
     int exit = 1;
+    int letsGo = 1;
 
     system("cls");
     printf("  *** Modificar  empleado ***\n\n");
@@ -433,7 +434,7 @@ void modifyEmployee(eEmployee list[], int len)
                 break;
             case 5:
                 printf("Volviendo a menu principal");
-                exit = 0;
+                letsGo = 0;
                 break;
             default:
                 printf("\n\nOpcion ingresada incorrecta, por favor ingrese una opcion del 1 al 5\n\n");
@@ -443,7 +444,7 @@ void modifyEmployee(eEmployee list[], int len)
 
             }
 
-            if(exit==0)
+            if(exit==0 && letsGo ==1)
 
             {
                 printf("\n*** MODIFICACCION EXITOSA ***");
@@ -455,7 +456,7 @@ void modifyEmployee(eEmployee list[], int len)
                 break;
             }
 
-            else
+            else if (letsGo == 0)
             {
                 printf("\n\n esta por salir de modificacion esta seguro? s/n \n\n");
                 scanf("%c",&seguir);
@@ -491,8 +492,38 @@ void harcodeoEmpleados(eEmployee* list)
     }
 };
 
+int sortEmployees(sEmployee* list, int len, int order)
+{
+    sEmployee auxEmployee;
+    int i, j;
+    for(i = 0; i < len-1; i++)
+    {
+        for(j = i+1; j < len; j++)
+        {
+           if(order == 1)
+            { /** ascendente **/
+            if(((strcmp(list[i].lastName, list[j].lastName)>0))&&(list[i].sector > list[j].sector))
+            {
+                auxEmployee = list[j];
+                list[j] = list[i];
+                list[i] = auxEmployee;
+            }
+            }
+            else if(order == 0) /** decendente**/
+            {
+                if(((strcmp(list[i].lastName, list[j].lastName)<0))&&(list[i].sector < list[j].sector))
+            {
+                auxEmployee = list[j];
+                list[j] = list[i];
+                list[i] = auxEmployee;
 
+            }
+            }
 
+        }
+    }
+    return OK;
+}
 
 
 

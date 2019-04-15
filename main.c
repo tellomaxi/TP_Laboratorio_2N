@@ -17,7 +17,7 @@ int main()
     initEmployees(employee,MAX);
     int flagSinAlta=0;
 
-    harcodeoEmpleados(employee);
+    //harcodeoEmpleados(employee);
 
     do
     {
@@ -59,6 +59,7 @@ int main()
             else
             {
                 viewEmployees(employee, MAX);
+                sortEmployees(employee, MAX);
             };
 
             break;
@@ -72,7 +73,7 @@ int main()
             break;
 
         }
-        printf("\n Desea continuar usando la calculadora? si/no \n\n");
+        printf("\n Desea continuar usando el ABM? si/no \n\n");
         scanf("%c",&seguir);
 
         fflush(stdin);

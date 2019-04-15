@@ -51,3 +51,29 @@
 	"ArrayEmployees.h"
 	"Funciones.h"
 
+1555366906 source:d:\zorzano\tp_laboratorio_2n-master\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1555366906 d:\zorzano\tp_laboratorio_2n-master\funciones.h
+
+1555368613 source:d:\zorzano\tp_laboratorio_2n-master\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
+1555368137 d:\zorzano\tp_laboratorio_2n-master\arrayemployees.h
+
+1555368414 source:d:\zorzano\tp_laboratorio_2n-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+	"Funciones.h"
+
